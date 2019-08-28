@@ -1,0 +1,13 @@
+package com.usermgt.api.infrastructure.dao;
+
+
+import com.usermgt.api.infrastructure.po.UserPO;
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
+
+/**
+ * @author hao.dai
+ * @date 2019/8/18
+ */
+public interface UserMapper extends Mapper<UserPO>, MySqlMapper<UserPO> {
+}
