@@ -1,8 +1,10 @@
-package com.usermgt.web;
+package com.usermgt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tk.mybatis.spring.annotation.MapperScan;
 
+@MapperScan(basePackages = "com.usermgt.infrastructure.mapper" )
 @SpringBootApplication
 public class UsermgtApplication {
 

@@ -16,7 +16,7 @@
     </parent>
     <groupId>com.usermgt</groupId>
     <artifactId>usermgt</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>usermgt</name>
     <description>Demo project for Spring Boot</description>
 

@@ -1,4 +1,4 @@
-package com.usermgt.web.config;
+package com.usermgt.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,14 +26,14 @@ public class SwaggerConfig {
         ParameterBuilder tokenPar = new ParameterBuilder();
         List<Parameter> pars = new ArrayList<>();
         //header中的token参数非必填，传空也可以
-        tokenPar.name("token").description("请求接口所需Token")
+/*        tokenPar.name("token").description("请求接口所需Token")
                 .modelRef(new ModelRef("string")).parameterType("header")
-                .required(false).build();
-        pars.add(tokenPar.build());
+                .required(false).build();*/
+//        pars.add(tokenPar.build());
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(metaData())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dashuai.learning.jwt.api"))
+                .apis(RequestHandlerSelectors.basePackage("com.usermgt.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(pars);
@@ -41,10 +41,10 @@ public class SwaggerConfig {
 
     private ApiInfo metaData() {
         return new ApiInfoBuilder()
-                .title("集成JWT API文档")
-                .description("描述")
-                .termsOfServiceUrl("")
-                .contact(new Contact("usermgt", "https://localhost:8080", "907139945@qq.com"))
+                .title("usermgt API文档")
+                .description("usermgt API文档")
+                .termsOfServiceUrl(null)
+                .contact(new Contact("usermgt", "https://localhost:8080", "@qq.com"))
                 .version("1.0")
                 .build();
     }

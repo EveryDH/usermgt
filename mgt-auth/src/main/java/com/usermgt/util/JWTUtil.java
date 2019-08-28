@@ -1,4 +1,4 @@
-package com.usermgt.auth.util;/*
+package com.usermgt.util;/*
 package com.usermgt.util;
 
 import com.auth0.jwt.JWT;

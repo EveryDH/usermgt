@@ -1,7 +1,7 @@
-package com.usermgt.api.service.impl;
-import com.usermgt.api.infrastructure.dao.UserMapper;
-import com.usermgt.api.infrastructure.po.UserPO;
-import com.usermgt.api.service.UserService;
+package com.usermgt.service.impl;
+import com.usermgt.infrastructure.mapper.UserMapper;
+import com.usermgt.infrastructure.po.UserPO;
+import com.usermgt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;

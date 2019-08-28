@@ -1,5 +1,8 @@
-package com.usermgt.web.controller;
+package com.usermgt.controller;
 
+import com.usermgt.infrastructure.po.UserPO;
+import com.usermgt.request.vo.CommonReturnType;
+import com.usermgt.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -16,16 +19,16 @@ import java.util.List;
  * @author hao.dai
  * @date 2019/8/18
  */
-@Api(description = "Authorization API", tags = "/user")
+@Api(description = "API", tags = "/user")
 @RestController
 @RequestMapping(path = "/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @Slf4j
 public class UserController {
 
-/*    @Autowired
-    UserService userService;*/
+    @Autowired
+    UserService userService;
 
- /*   @PostMapping("/saveUser")
+    @PostMapping("/saveUser")
     @ApiOperation(value = "save user")
     public CommonReturnType saveUser(UserPO userPO) {
         int ret = userService.insertUser(userPO);
@@ -51,7 +54,7 @@ public class UserController {
     public CommonReturnType getUserAll() {
         List<UserPO> userPOS = userService.selectUserAll();
         return new CommonReturnType<>(true,"请求成功",userPOS);
-    }*/
+    }
     @GetMapping("/index")
     @ApiOperation(value = "index")
     public String index() {

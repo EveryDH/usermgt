@@ -1,7 +1,7 @@
-package com.usermgt.api.infrastructure.dao;
+package com.usermgt.infrastructure.mapper;
 
 
-import com.usermgt.api.infrastructure.po.UserPO;
+import com.usermgt.infrastructure.po.UserPO;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
 

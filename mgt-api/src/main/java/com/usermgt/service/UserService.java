@@ -1,6 +1,6 @@
-package com.usermgt.api.service;
+package com.usermgt.service;
 
-import com.usermgt.api.infrastructure.po.UserPO;
+import com.usermgt.infrastructure.po.UserPO;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.usermgt.auth.config;/*
+package com.usermgt.config;/*
 package com.usermgt.config;
 
 import com.usermgt.domain.model.JWTToken;
