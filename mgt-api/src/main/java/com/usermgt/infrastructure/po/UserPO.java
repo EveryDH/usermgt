@@ -2,9 +2,8 @@ package com.usermgt.infrastructure.po;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * @author hao.dai
@@ -15,28 +14,21 @@ import javax.persistence.Table;
 public class UserPO {
 //    用户姓名、邮箱地址、注册地址、地区、ip地址、注册时间、登录时间
     @Id
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
     private String userName;
 
-    @Column
     private String eMail;
 
-    @Column
     private String registerAddress;
 
-    @Column
     private String district;
 
-    @Column
     private String ip;
 
-    @Column
-    private String registerTime;
+    private Date registerTime;
 
-    @Column
-    private String loginTime;
+    private Date loginTime;
 
 }

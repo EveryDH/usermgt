@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,6 +34,12 @@ public class UserController {
     @PostMapping("/saveUser")
     @ApiOperation(value = "save user")
     public CommonReturnType saveUser(UserPO userPO) {
+//        SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+/*        userPO.setRegisterTime(Timestamp.valueOf(simpleDate.format(new Date())));
+        userPO.setLoginTime(Timestamp.valueOf(simpleDate.format(new Date())));*/
+        Date date = new Date();
+        userPO.setLoginTime(date);
+        userPO.setRegisterTime(date);
         int ret = userService.insertUser(userPO);
         return new CommonReturnType<>(true,"请求成功",ret);
     }
