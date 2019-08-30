@@ -22,9 +22,9 @@ import java.util.List;
  * @author hao.dai
  * @date 2019/8/18
  */
-@Api(description = "API", tags = "/user")
+@Api(description = "API", tags = "/UserPO")
 @RestController
-@RequestMapping(path = "/user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(path = "/UserPO", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @Slf4j
 public class UserController {
 
@@ -32,34 +32,31 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/saveUser")
-    @ApiOperation(value = "save user")
-    public CommonReturnType saveUser(UserPO userPO) {
-//        SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-/*        userPO.setRegisterTime(Timestamp.valueOf(simpleDate.format(new Date())));
-        userPO.setLoginTime(Timestamp.valueOf(simpleDate.format(new Date())));*/
+    @ApiOperation(value = "save UserPO")
+    public CommonReturnType saveUser(UserPO UserPO) {
         Date date = new Date();
-        userPO.setLoginTime(date);
-        userPO.setRegisterTime(date);
-        int ret = userService.insertUser(userPO);
+        UserPO.setLoginTime(date);
+        UserPO.setRegisterTime(date);
+        int ret = userService.insertUser(UserPO);
         return new CommonReturnType<>(true,"请求成功",ret);
     }
 
     @GetMapping("/deleteUser")
-    @ApiOperation(value = "delete user")
+    @ApiOperation(value = "delete UserPO")
     public CommonReturnType deleteUserById(Integer userId) {
         int ret = userService.deleteUserById(userId);
         return new CommonReturnType<>(true,"请求成功",ret);
     }
 
     @GetMapping("/updateUser")
-    @ApiOperation(value = "update user by id")
-    public CommonReturnType updateUser(UserPO userPO) {
-        int ret = userService.updateUserByExample(userPO);
+    @ApiOperation(value = "update UserPO by id")
+    public CommonReturnType updateUser(UserPO UserPO) {
+        int ret = userService.updateUserByExample(UserPO);
         return new CommonReturnType<>(true,"请求成功",ret);
     }
 
     @GetMapping("/getUserAll")
-    @ApiOperation(value = "get user all")
+    @ApiOperation(value = "get UserPO all")
     public CommonReturnType getUserAll() {
         List<UserPO> userPOS = userService.selectUserAll();
         return new CommonReturnType<>(true,"请求成功",userPOS);

@@ -10,11 +10,11 @@ import java.util.List;
  */
 public interface UserService {
 
-    int insertUser(UserPO userPO);
+    int insertUser(UserPO UserPO);
 
     int deleteUserById(Integer userId);
 
-    int updateUserByExample(UserPO userPO);
+    int updateUserByExample(UserPO UserPO);
 
     List<UserPO> selectUserAll();
 

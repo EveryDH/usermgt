@@ -19,8 +19,8 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     @Override
-    public int insertUser(UserPO userPO) {
-        return userMapper.insert(userPO);
+    public int insertUser(UserPO UserPO) {
+        return userMapper.insert(UserPO);
     }
 
     @Override
@@ -29,10 +29,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int updateUserByExample(UserPO userPO) {
+    public int updateUserByExample(UserPO UserPO) {
         Example example = Example.builder(UserPO.class).build();
-        example.and().andEqualTo("id", userPO.getId());
-        return userMapper.updateByExample(userPO,example);
+        example.and().andEqualTo("id", UserPO.getId());
+        return userMapper.updateByExample(UserPO,example);
     }
 
     @Override
