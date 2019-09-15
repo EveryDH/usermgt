@@ -34,7 +34,7 @@ public class UserPO {
 
     private String ip;
 
-    private Date investment_year;
+    private Date investmentYear;
 
     private Date registerTime;
 

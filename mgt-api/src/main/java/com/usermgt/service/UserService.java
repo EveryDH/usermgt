@@ -16,8 +16,9 @@ public interface UserService {
 
     int updateUserByExample(UserPO UserPO);
 
-    List<UserPO> selectUserAll();
+    List<UserPO> selectUserAll(int pageIndex, int pageSize);
 
     UserPO selectByName(String username);
 
+    UserPO selectUserInfoByUserId(Integer userId);
 }

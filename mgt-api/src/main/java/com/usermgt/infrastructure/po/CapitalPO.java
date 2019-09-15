@@ -19,19 +19,21 @@ public class CapitalPO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private Integer userId;
+
     private String name;
 
-    private String native_place;
+    private String nativePlace;
 
-    private Date investment_time;
+    private Date investmentTime;
 
-    private String payment_type;
+    private String paymentType;
 
     private BigDecimal income;
 
     private BigDecimal expenditure;
 
-    private BigDecimal user_capital;
+    private BigDecimal userCapital;
 
     private String remarks;
 }
